@@ -1,0 +1,62 @@
+.form
+  margin-bottom: 2rem
+
+  &__alert
+    padding: 1.2rem
+    margin: 1rem 0
+    font-size: 1.4rem
+    border: 1px solid rgba(0,0,0,0.25)
+    border-radius: 3px
+    color: $color-alert-text
+    background-color: $color-alert
+
+  &__group
+    margin-bottom: 1.5rem
+
+  &__label
+    display: block
+    font-size: 1.3rem
+    margin-bottom: 0.2rem
+    &--password
+      display: flex
+      justify-content: space-between
+    &--forget
+      color: $color-link-grey
+      text-decoration: none
+
+      &:hover, &:focus, &:active
+        color: $color-link-blue
+
+
+  &__input
+    display: block
+    padding: .4rem 1rem
+    width: 100%
+    border: 1px solid #dcdee3
+    border-radius: 4px
+    height: 4rem
+    outline: none
+    &:focus
+      border-color: #09f
+      box-shadow: inset 0 0 4px 0 #09f
+    &.error
+      border-color: #f24220
+      box-shadow: none
+
+  &__error
+    color: #f24220
+    font-size: 1.2rem
+    margin-top: 0.3rem
+    list-style: inside
+
+  &__signup
+    display: flex
+    justify-content: space-between
+    font-size: 1.3rem
+
+    a
+      color: $color-link-blue
+      text-decoration: none
+
+      &:hover, &:focus, &:active
+        color: $font-color
