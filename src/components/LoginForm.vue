@@ -9,7 +9,7 @@
         <input
           name="email"
           class="input"
-          v-bind:class="{ error: hasEmailError }"
+          :class="{ error: hasEmailError }"
           @focusout="emailErrorFlag = true"
           id="work-email"
           type="email"
@@ -30,12 +30,12 @@
         <input
           name="password"
           class="input"
-          v-bind:class="{ error: hasPasswordError }"
+          :class="{ error: hasPasswordError }"
           id="password"
           type="password"
           placeholder="8+ Characters"
           v-model="password"
-          v-on:focusout="passwordErrorFlag = true"
+          @focusout="passwordErrorFlag = true"
           data-cy="passwordInput"
         />
         <p class="error" v-if="hasPasswordError">
@@ -43,7 +43,7 @@
         </p>
       </div>
       <button
-        v-bind:disabled="submitDisabled"
+        :disabled="submitDisabled"
         class="btn primary"
         data-cy="loginSubmit"
       >
@@ -126,7 +126,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "../sass/abstracts/_variables"
+  @import "../sass/_variables"
 .form
   width: 100%
 
@@ -142,17 +142,20 @@ export default {
     margin-bottom: 2vh
     label
       display: block
-        font-size: 1rem
-        margin-bottom: 0.2rem
+      font-size: .8rem
+      margin-bottom: 0.2rem
+      font-weight: 600
     .password
-        display: flex
-        justify-content: space-between
+      display: flex
+      justify-content: space-between
+      a
+        font-size: .8rem
     .forget
-        color: $color-link-grey
-        text-decoration: none
+      color: $color-link-grey
+      text-decoration: none
 
-        &:hover, &:focus, &:active
-          color: $color-link-blue
+      &:hover, &:focus, &:active
+        color: $color-link-blue
 
 
     input
@@ -201,6 +204,7 @@ export default {
   .signup
     display: flex
     justify-content: space-between
+    font-size: 0.8rem
     a
       color: $color-link-blue
       text-decoration: none

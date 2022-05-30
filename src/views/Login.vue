@@ -15,7 +15,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../sass/views/Login"
 .container
   display: flex
   align-items: center

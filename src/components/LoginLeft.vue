@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import "../sass/abstracts/_variables"
+@import "../sass/_variables"
 
 div
   height: 100vh

@@ -2,7 +2,7 @@
   <div class="right">
     <div class="container">
       <div class="main">
-        <img class="main__logo" alt="Instabug logo" src="../assets/logo.svg" />
+        <img class="main__logo" alt="Instabug logo" src="logo.svg" />
         <h3 class="heading">Log in to Instabug</h3>
       </div>
 
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import "../sass/abstracts/variables"
+@import "../sass/variables"
 .right
   width: 50%
   height: 100vh
@@ -138,7 +138,7 @@ export default {
       justify-content: space-between
       align-items: center
       div
-        width: 40%
+        width: 45%
 
 
     .clients
@@ -152,7 +152,8 @@ export default {
         color: $color-grey-dark-2
         display: flex
         justify-content: space-around
-        align-items: center     
+        align-items: center    
+        gap: 1rem 
 
         svg
           fill: currentColor
@@ -170,7 +171,7 @@ export default {
           height: 19px
         .one
           width: 89px
-          height: 27px
+          height: 35px
         .house
           width: 107px
           height: 17px

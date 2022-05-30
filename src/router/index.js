@@ -8,11 +8,13 @@ const routes = [
     path: "/login",
     name: "LoginPage",
     component: Login,
+    redirect: localStorage.getItem("email") && "/welcome",
   },
   {
     path: "/welcome",
     name: "WelcomePage",
     component: Welcome,
+    redirect: !localStorage.getItem("email") && "/login",
   },
   {
     path: "/:pathMatch(.*)*",

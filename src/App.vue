@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "sass/abstracts/_variables"
+@import "sass/_variables"
 *
   margin: 0
   padding: 0
