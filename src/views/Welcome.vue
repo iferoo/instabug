@@ -26,10 +26,8 @@ export default {
 
 <style lang="sass">
 .welcome
-  max-width: 50rem
-  margin: 0 auto
-  padding: 10rem 2rem
   text-align: center
-  .heading
+  // padding: 10rem
+  .heading 
     margin-bottom: 2rem
 </style>

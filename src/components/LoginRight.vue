@@ -21,14 +21,14 @@
         </a>
       </div>
       <span class="border">
-          <div>
-            <hr />
-          </div>
-          OR
-          <div>
-            <hr />
-          </div>
-        </span>
+        <div>
+          <hr />
+        </div>
+        OR
+        <div>
+          <hr />
+        </div>
+      </span>
       <!-- <LoginForm /> -->
       <LoginForm />
       <div class="clients">
@@ -152,8 +152,8 @@ export default {
         color: $color-grey-dark-2
         display: flex
         justify-content: space-around
-        align-items: center    
-        gap: 1rem 
+        align-items: center
+        // gap: 1rem
 
         svg
           fill: currentColor
@@ -175,4 +175,18 @@ export default {
         .house
           width: 107px
           height: 17px
+
+@media screen and (min-width: 1024px) and (max-width: 1280px)
+  .right
+    .container
+      width: 80%
+
+@media screen and (min-width: 128px) and (max-width: 1024px)
+  .right
+    width: 100%
+    height: fit-content
+    display: flex
+    justify-content: space-between
+    .container
+      width: 70%
 </style>

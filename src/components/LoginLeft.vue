@@ -35,23 +35,23 @@ export default {
         {
           id: 1,
           imageUrl: {
-            backgroundImage: `url(${require("../assets/LoginSlider/instabug1.jpeg")})`,
-          },
-          text: "Secure Crash Reporting With Real-Time Alerts",
-        },
-        {
-          id: 2,
-          imageUrl: {
-            backgroundImage: `url(${require("../assets/LoginSlider/instabug3.jpeg")})`,
+            backgroundImage: `url(https://svgshare.com/i/hrA.svg})`,
           },
           text: "Accelerate Your Entire Mobile Team Workflow",
         },
         {
-          id: 3,
+          id: 2,
           imageUrl: {
-            backgroundImage: `url(${require("../assets/LoginSlider/instabug4.svg")})`,
+            backgroundImage: `url(https://svgshare.com/i/hrB.svg})`,
           },
           text: "The Most Comprehensive Bug Reporting Tool For Mobile Apps",
+        },
+        {
+          id: 3,
+          imageUrl: {
+            backgroundImage: `url(https://svgshare.com/i/hrV.svg})`,
+          },
+          text: "Secure Crash Reporting With Real-Time Alerts",
         },
       ],
     };
@@ -68,8 +68,6 @@ export default {
         } else {
           ++v.counter;
         }
-        // console.log(v.counter);
-        // console.log(v.slides[v.counter]);
       }, this.slideInterval);
     },
   },
@@ -84,10 +82,10 @@ div
   width: 50%
   position: relative
   background-color: $color-primary-dark
-  /* background-image: url("../assets/LoginSlider/instabug1.jpeg") */
-  background-position: top
+  background-position: center
   background-repeat: no-repeat
-  background-size: cover
+  background-size: 70vh
+
 
   .dots
     background-image: none
@@ -95,18 +93,20 @@ div
     width: fit-content
     height: fit-content
     position: absolute
-    top: 80%
+    top: 85%
     left: 50%
     transform: translate(-50%,-50%)
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: 5vh
+    gap: 2vh
 
     p
       height: fit-content
       color: $color-white
+      font-size: 1.3rem
+      text-align: center
     ul
       display: flex
       gap: 1.5vh
@@ -122,4 +122,9 @@ div
         cursor: pointer
         &.active
           background-color: $color-white
+
+@media screen and (min-width: 128px) and (max-width: 1024px) 
+  div 
+    width: 100%
+    background-size: 50vh
 </style>
