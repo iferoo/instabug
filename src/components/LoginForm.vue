@@ -138,7 +138,7 @@ export default {
     color: $color-alert-text
     background-color: $color-alert
 
-  .group   
+  .group
     margin-bottom: 2vh
     label
       display: block
@@ -193,10 +193,10 @@ export default {
   .primary
     background-color: $color-primary
     color: $color-white
-    
+
     &:hover
       background-color: $color-btn-hover
-    
+
     &:disabled
       cursor: not-allowed
       background-color: $color-btn-disabled
@@ -211,6 +211,4 @@ export default {
 
       &:hover, &:focus, &:active
         color: $font-color
-
-
 </style>

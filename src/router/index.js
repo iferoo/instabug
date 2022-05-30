@@ -17,9 +17,13 @@ const routes = [
     redirect: !localStorage.getItem("email") && "/login",
   },
   {
-    path: "/:pathMatch(.*)*",
+    path: "/404",
     name: "not-found",
     component: NotFound,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/404",
   },
   {
     path: "/",

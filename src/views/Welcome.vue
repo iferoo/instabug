@@ -1,7 +1,7 @@
 <template>
   <div class="welcome">
-    <h2 data-cy="welcomeTitle" class="heading">Welcome to {{ email }}</h2>
-    <button class="btn btn--primary" @click="handleLogout">Logout</button>
+    <h2 data-cy="welcomeTitle" class="heading">Welcome {{ email }}</h2>
+    <button class="btn primary" @click="handleLogout">Logout</button>
   </div>
 </template>
 
@@ -25,9 +25,36 @@ export default {
 </script>
 
 <style lang="sass">
+@import "../sass/_variables"
+
 .welcome
   text-align: center
-  // padding: 10rem
-  .heading 
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  .btn
+    font-size: 1rem
+    font-weight: 600
+    width: 100%
+    text-align: center
+    border-radius: 4px
+    border: none
+    cursor: pointer
+    padding: 1.5vh
+    margin-bottom: 1vh
+
+  .primary
+    background-color: $color-primary
+    color: $color-white
+
+    &:hover
+      background-color: $color-btn-hover
+
+    &:disabled
+      cursor: not-allowed
+      background-color: $color-btn-disabled
+
+  .heading
     margin-bottom: 2rem
 </style>

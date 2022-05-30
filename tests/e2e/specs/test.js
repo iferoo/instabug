@@ -1,8 +1,8 @@
 describe("Login form", () => {
   it("alerts with error when input wrong email and password", () => {
     const { email, password } = {
-      email: "test@instabug.com",
-      password: "000000000",
+      email: "iferoo@instabug.com",
+      password: "12345678",
     };
 
     // redirect to login page
@@ -26,7 +26,7 @@ describe("Login form", () => {
   it("alerts with error when input wrong password", () => {
     const { email, password } = {
       email: "mohamed@instabug.com",
-      password: "000000000",
+      password: "987654321",
     };
 
     // redirect to login page
@@ -73,7 +73,7 @@ describe("Login form", () => {
   });
 
   it("validate email input field for invalid email addresses", () => {
-    const email = "ssssss";
+    const email = "dddd";
 
     // redirect to login page
     cy.visit("/login");
