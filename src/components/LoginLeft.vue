@@ -35,21 +35,21 @@ export default {
         {
           id: 1,
           imageUrl: {
-            backgroundImage: `url(https://svgshare.com/i/hrA.svg})`,
+            backgroundImage: `url(${require("../assets/LoginSlider/hrA.svg")})`,
           },
           text: "Accelerate Your Entire Mobile Team Workflow",
         },
         {
           id: 2,
           imageUrl: {
-            backgroundImage: `url(https://svgshare.com/i/hrB.svg})`,
+            backgroundImage: `url(${require("../assets/LoginSlider/hrB.svg")})`,
           },
           text: "The Most Comprehensive Bug Reporting Tool For Mobile Apps",
         },
         {
           id: 3,
           imageUrl: {
-            backgroundImage: `url(https://svgshare.com/i/hrV.svg})`,
+            backgroundImage: `url(${require("../assets/LoginSlider/hrV.svg")})`,
           },
           text: "Secure Crash Reporting With Real-Time Alerts",
         },
@@ -90,7 +90,7 @@ div
   .dots
     background-image: none
     background-color: transparent
-    width: fit-content
+    width: 80%
     height: fit-content
     position: absolute
     top: 85%

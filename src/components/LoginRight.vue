@@ -102,6 +102,7 @@ export default {
         width: 100%
         display: flex
         justify-content: space-between
+        align-items: center
         text-decoration: none
         height: fit-content
         img
