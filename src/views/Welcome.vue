@@ -1,6 +1,6 @@
 <template>
   <div class="welcome">
-    <h2 data-cy="welcomeTitle" class="heading">Welcome {{ email }}</h2>
+    <h2 data-cy="welcomeTitle" class="heading">Welcome to {{ email }}</h2>
     <button class="btn primary" @click="handleLogout">Logout</button>
   </div>
 </template>

@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "LoginLeft",
+  name: "SliderLogin",
   data: function () {
     return {
       slideInterval: 4000,
@@ -85,6 +85,8 @@ div
   background-position: center
   background-repeat: no-repeat
   background-size: 70vh
+  transition: 0.2s
+
 
 
   .dots

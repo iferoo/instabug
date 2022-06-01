@@ -23,6 +23,7 @@ export default {
   font-family: 'ProximaNova', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   line-height: 1.4
+  
 .app
   height: 100vh
 </style>

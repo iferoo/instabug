@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <LoginLeft />
-    <LoginRight />
+    <Slider />
+    <LoginForm />
   </div>
 </template>
 
 <script>
-import LoginLeft from "@/components/LoginLeft.vue";
-import LoginRight from "@/components/LoginRight.vue";
+import Slider from "@/components/Slider.vue";
+import LoginForm from "@/components/LoginForm.vue";
 export default {
   name: "LoginPage",
-  components: { LoginLeft, LoginRight },
+  components: { Slider, LoginForm },
 };
 </script>
 
@@ -21,9 +21,8 @@ export default {
   justify-content: space-evenly
   height: inherit
 
-@media screen and (min-width: 128px) and (max-width: 1024px) 
-  .container 
+@media screen and (min-width: 128px) and (max-width: 1024px)
+  .container
     flex-direction: column
     height: fit-content
-
 </style>

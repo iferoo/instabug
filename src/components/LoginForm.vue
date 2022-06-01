@@ -1,214 +1,139 @@
 <template>
-  <div class="form">
-    <form @submit.prevent="handleSubmit" novalidate="true">
-      <div data-cy="invalidUserAlert" class="alert" v-if="invalidUser">
-        <p>Your email and/or your password are incorrect</p>
+  <div class="login">
+    <div class="container">
+      <div class="logo">
+        <img alt="Instabug logo" src="logo.svg" />
+        <p>Log in to Instabug</p>
       </div>
-      <div class="group">
-        <label class="label" for="work-email">Work Email</label>
-        <input
-          name="email"
-          class="input"
-          :class="{ error: hasEmailError }"
-          @focusout="emailErrorFlag = true"
-          id="work-email"
-          type="email"
-          placeholder="you@company.com"
-          v-model="email"
-          data-cy="emailInput"
-        />
-        <p class="error" data-cy="emailError" v-if="hasEmailError">
-          Enter a valid email address
-        </p>
-      </div>
-
-      <div class="group">
-        <div class="label password">
-          <label for="password"> Password </label>
-          <a class="forget" href="#">forget password?</a>
+      <SocialLogin />
+      <span class="border">
+        <div>
+          <hr />
         </div>
-        <input
-          name="password"
-          class="input"
-          :class="{ error: hasPasswordError }"
-          id="password"
-          type="password"
-          placeholder="8+ Characters"
-          v-model="password"
-          @focusout="passwordErrorFlag = true"
-          data-cy="passwordInput"
-        />
-        <p class="error" v-if="hasPasswordError">
-          Password must be eight characters or more
-        </p>
+        OR
+        <div>
+          <hr />
+        </div>
+      </span>
+      <EmailLogin />
+      <div class="companies">
+        <h4>Trusted by the top companies.</h4>
+        <div class="images">
+          <lyftIcon class="lyft" />
+          <buzzFeed class="buzz" />
+          <asana class="asana" />
+          <onePlus class="one" />
+          <houseParty class="house" />
+        </div>
       </div>
-      <button
-        :disabled="submitDisabled"
-        class="btn primary"
-        data-cy="loginSubmit"
-      >
-        Log in
-      </button>
-      <div class="signup">
-        <p>Don't have account? <a href="#">Signup</a></p>
-        <a href="#">Login via SSO</a>
-      </div>
-    </form>
+    </div>
   </div>
 </template>
 
 <script>
-import router from "@/router";
+import lyftIcon from "@/assets/lyftIcon";
+import buzzFeed from "@/assets/buzzFeed";
+import asana from "@/assets/asana";
+import onePlus from "@/assets/onePlus";
+import houseParty from "@/assets/houseParty";
+import EmailLogin from "./EmailLogin.vue";
+import SocialLogin from "./SocialLogin.vue";
 
 export default {
   name: "LoginForm",
-  data: function () {
-    return {
-      usersData: [
-        { email: "mohamed@instabug.com", password: "A12345678" },
-        { email: "mohamed1@instabug.com", password: "A12345678" },
-        { email: "mohamed2@instabug.com", password: "A12345678" },
-        { email: "mohamed3@instabug.com", password: "A12345678" },
-        { email: "mohamed4@instabug.com", password: "A12345678" },
-        { email: "mohamed5@instabug.com", password: "A12345678" },
-        { email: "mohamed6@instabug.com", password: "A12345678" },
-        { email: "mohamed7@instabug.com", password: "A12345678" },
-      ],
-      email: "",
-      password: "",
-      emailErrorFlag: false,
-      passwordErrorFlag: false,
-      invalidUser: false,
-    };
-  },
-  computed: {
-    hasEmailError: function () {
-      return (
-        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-          this.email
-        ) && this.emailErrorFlag
-      );
-    },
-    // this function to check that password contain 8 or more chars
-    hasPasswordError: function () {
-      return !/.{8,}/.test(this.password) && this.passwordErrorFlag;
-    },
-    // We can use this function to validate password contain 8 or more chars and
-    // at least one uppercase letter and one number and don't contain the email name address
-    // hasPasswordError: function () {
-    //   return (
-    //     (!/(?=.*\d)(?=.*[A-Z]).{8,}/.test(this.password) ||
-    //       (this.password.includes(this.email) && this.email !== "")) &&
-    //     this.passwordErrorFlag
-    //   );
-    // },
-    submitDisabled: function () {
-      return (
-        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-          this.email
-        ) || !/.{8,}/.test(this.password)
-      );
-    },
-  },
-  methods: {
-    handleSubmit: function () {
-      const user = this.usersData.find(
-        (user) => user.email === this.email && user.password === this.password
-      );
-      if (user) {
-        localStorage.setItem("email", user.email);
-        this.invalidUser = false;
-        router.go("/welcome");
-      } else this.invalidUser = true;
-    },
+  components: {
+    lyftIcon,
+    buzzFeed,
+    asana,
+    onePlus,
+    houseParty,
+    EmailLogin,
+    SocialLogin,
   },
 };
 </script>
 
 <style lang="sass" scoped>
-  @import "../sass/_variables"
-.form
-  width: 100%
+@import "../sass/variables"
+.login
+  width: 50%
+  height: 100vh
+  .container
+    width: 65%
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: stretch
+    gap: 2vh
+    
 
-  .alert
-    padding: 0.5rem
-    margin-bottom: 1rem
-    border: 1px solid rgba(0,0,0,0.25)
-    border-radius: 3px
-    color: $color-alert-text
-    background-color: $color-alert
+    .logo
+      display: flex
+      flex-direction: column
+      align-items: center
+      height: fit-content
+      img
+        width: 10vh
+      p
+        height: fit-content
+        font-size: 1.5rem
+        
 
-  .group
-    margin-bottom: 2vh
-    label
-      display: block
-      font-size: .8rem
-      margin-bottom: 0.2rem
-      font-weight: 600
-    .password
+
+    .border
       display: flex
       justify-content: space-between
-      a
-        font-size: .8rem
-    .forget
-      color: $color-link-grey
-      text-decoration: none
-
-      &:hover, &:focus, &:active
-        color: $color-link-blue
+      align-items: center
+      div
+        width: 45%
+        hr
+          color: $color-grey-light-2
 
 
-    input
-      display: block
-      padding: .4rem 1rem
-      width: 100%
-      border: 1px solid #dcdee3
-      border-radius: 4px
-      // height: 4rem
-      outline: none
-      &:focus
-        border-color: #09f
-        box-shadow: inset 0 0 4px 0 #09f
-      &.error
-        border-color: #f24220
-        box-shadow: none
+    .companies
+      color: $color-font-grey
+      text-align: center
 
-    .error
-      color: #f24220
-      font-size: .8rem
-      margin-top: 0.3rem
-      list-style: inside
+      h4
+        margin-top: 1rem
+        margin-bottom: .5rem
+        color: $color-grey-dark-2
 
-  .btn
-    font-size: 1rem
-    font-weight: 600
+      .images
+        color: $color-grey-dark-2
+        display: flex
+        justify-content: space-around
+        align-items: center
+        // gap: 1rem
+
+        svg
+          fill: $color-grey-dark-2
+          object-fit: contain
+          overflow: hidden
+
+        .lyft
+          width: 27.5px
+          height: 19.2px
+        .buzz
+          width: 77.6px
+          height: 12.1px
+        .asana
+          width: 81px
+          height: 19px
+        .one
+          width: 89px
+          height: 35px
+        .house
+          width: 107px
+          height: 17px
+
+@media screen and (min-width: 1024px) and (max-width: 1280px)
+
+@media screen and (min-width: 128px) and (max-width: 1024px)
+  .login
     width: 100%
-    text-align: center
-    border-radius: 4px
-    border: none
-    cursor: pointer
-    padding: 1.5vh
-    margin-bottom: 1vh
-
-  .primary
-    background-color: $color-primary
-    color: $color-white
-
-    &:hover
-      background-color: $color-btn-hover
-
-    &:disabled
-      cursor: not-allowed
-      background-color: $color-btn-disabled
-
-  .signup
+    height: fit-content
     display: flex
     justify-content: space-between
-    font-size: 0.8rem
-    a
-      color: $color-link-blue
-      text-decoration: none
-
-      &:hover, &:focus, &:active
-        color: $font-color
 </style>
