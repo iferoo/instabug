@@ -85,7 +85,7 @@ div
   background-position: center
   background-repeat: no-repeat
   background-size: 70vh
-  transition: 0.2s
+  // transition: 0.2s
 
 
 
