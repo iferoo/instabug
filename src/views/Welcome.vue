@@ -45,15 +45,14 @@ export default {
     margin-bottom: 1vh
 
   .primary
-    background-color: $color-primary
+    background-color: #a30b0b
+
     color: $color-white
 
     &:hover
-      background-color: $color-btn-hover
+      background-color: #a30b0bce
 
-    &:disabled
-      cursor: not-allowed
-      background-color: $color-btn-disabled
+
 
   .heading
     margin-bottom: 2rem
